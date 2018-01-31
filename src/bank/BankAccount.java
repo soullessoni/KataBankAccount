@@ -1,6 +1,5 @@
 package bank;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 
 import tools.Record;
@@ -11,6 +10,9 @@ public class BankAccount {
 	private LinkedList<Record> records;
 	
 	public BankAccount(int amount) {
+		if (amount < 0)
+			throw new IllegalArgumentException("Creation amount can't be negative");
+
 		this.amount = amount;
 		this.records = new LinkedList<Record>();
 		this.records.add(new Record(this, amount, "Creation"));
@@ -33,11 +35,15 @@ public class BankAccount {
 	}
 
 	public void deposit(int depositAmount) {
+		if (depositAmount < 0)
+			throw new IllegalArgumentException("Deposit amount can't be negative");
 		this.amount += depositAmount;
 		this.records.add(new Record(this, depositAmount, "Deposit"));
 	}
 
-	public void withdraw(int withdrawAmount) {
+	public void withdraw(int withdrawAmount)  {
+		if (withdrawAmount < 0)
+			throw new IllegalArgumentException("Withdraw amount can't be negative");
 		this.amount -= withdrawAmount;
 		this.records.add(new Record(this, withdrawAmount, "Withdraw"));
 	}

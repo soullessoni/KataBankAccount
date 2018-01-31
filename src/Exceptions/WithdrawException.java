@@ -2,6 +2,11 @@ package Exceptions;
 
 public class WithdrawException extends Exception {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2295285592087354755L;
+
 	public WithdrawException() {
 		// TODO Auto-generated constructor stub
 	}

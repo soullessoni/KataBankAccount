@@ -2,6 +2,11 @@ package Exceptions;
 
 public class NegativeWithdrawException extends Exception {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 286879540619085992L;
+
 	public NegativeWithdrawException() {
 		// TODO Auto-generated constructor stub
 	}

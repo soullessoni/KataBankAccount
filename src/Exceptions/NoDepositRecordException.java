@@ -2,6 +2,11 @@ package Exceptions;
 
 public class NoDepositRecordException extends Exception {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7778761347539285891L;
+
 	public NoDepositRecordException() {
 		// TODO Auto-generated constructor stub
 	}

@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Exceptions.DepositException;
+import Exceptions.NegativeCreationException;
 import Exceptions.NegativeDepositException;
 import Exceptions.NegativeWithdrawException;
 import Exceptions.NoDepositRecordException;
@@ -54,18 +55,18 @@ public class BankAccountTest {
 	}
 	
 	
-	@Test
-	public void when_negative_creation() throws NegativeWithdrawException{
+	@Test(expected=IllegalArgumentException.class)
+	public void when_negative_creation() throws NegativeCreationException{
 		@SuppressWarnings("unused")
 		BankAccount bankAccountNegative = new BankAccount(-600);
 	}
 	
-	@Test
+	@Test(expected=IllegalArgumentException.class)
 	public void when_negative_deposit() throws NegativeDepositException{
 		bankAccount.deposit(-800);
 	}
 	
-	@Test
+	@Test(expected=IllegalArgumentException.class)
 	public void when_negative_withdraw() throws NegativeWithdrawException{
 		bankAccount.withdraw(-800);
 	}

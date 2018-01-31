@@ -2,6 +2,11 @@ package Exceptions;
 
 public class NoWithdrawRecordException extends Exception {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3358067731069714199L;
+
 	public NoWithdrawRecordException() {
 		// TODO Auto-generated constructor stub
 	}

@@ -2,6 +2,11 @@ package Exceptions;
 
 public class NegativeDepositException extends Exception {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2496913802649120194L;
+
 	public NegativeDepositException() {
 		// TODO Auto-generated constructor stub
 	}

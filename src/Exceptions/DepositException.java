@@ -2,6 +2,11 @@ package Exceptions;
 
 public class DepositException extends Exception {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8126264628824253011L;
+
 	public DepositException() {
 		// TODO Auto-generated constructor stub
 	}
