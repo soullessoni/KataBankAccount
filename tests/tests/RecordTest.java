@@ -1,8 +1,9 @@
-package tools;
+package tests;
 
 import org.junit.Test;
 
 import bank.BankAccount;
+import tools.Record;
 
 public class RecordTest {
 

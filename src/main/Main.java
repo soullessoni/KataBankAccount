@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		try {
-			BankAccount bankAccount = new BankAccount(-30);
+			BankAccount bankAccount = new BankAccount(300);
 			
 			bankAccount.deposit(1);
 			
