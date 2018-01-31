@@ -1,17 +1,11 @@
 package bank;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import Exceptions.DepositException;
-import Exceptions.NegativeCreationException;
-import Exceptions.NegativeDepositException;
-import Exceptions.NegativeWithdrawException;
-import Exceptions.NoDepositRecordException;
-import Exceptions.NoWithdrawRecordException;
-import Exceptions.WithdrawException;
 import tools.Record;
 
 public class BankAccountTest {
@@ -23,7 +17,7 @@ public class BankAccountTest {
 	}
 	
 	@Test
-	public void when_deposit_of_500_account_is_increased_by_500() throws DepositException {
+	public void when_deposit_of_500_account_is_increased_by_500()  {
 		int oldAmount = bankAccount.getAmount();
 		bankAccount.deposit(500);
 	
@@ -31,7 +25,7 @@ public class BankAccountTest {
 	}
 	
 	@Test
-	public void when_withdraw_of_500_account_is_decreased_by_500() throws WithdrawException {
+	public void when_withdraw_of_500_account_is_decreased_by_500()  {
 		int oldAmount = bankAccount.getAmount();
 		bankAccount.withdraw(500);
 	
@@ -39,7 +33,7 @@ public class BankAccountTest {
 	}
 	
 	@Test
-	public void when_deposit_record_is_made_with_informations() throws NoDepositRecordException {
+	public void when_deposit_record_is_made_with_informations()  {
 		bankAccount.deposit(500);
 		Record record = new Record(bankAccount, 500, "Deposit");
 		
@@ -47,7 +41,7 @@ public class BankAccountTest {
 	}
 	
 	@Test
-	public void when_withdraw_record_is_made_with_informations() throws NoWithdrawRecordException {
+	public void when_withdraw_record_is_made_with_informations()  {
 		bankAccount.withdraw(500);
 		Record record = new Record(bankAccount, 500, "Withdraw");
 		
@@ -56,18 +50,18 @@ public class BankAccountTest {
 	
 	
 	@Test(expected=IllegalArgumentException.class)
-	public void when_negative_creation() throws NegativeCreationException{
+	public void when_negative_creation() {
 		@SuppressWarnings("unused")
 		BankAccount bankAccountNegative = new BankAccount(-600);
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
-	public void when_negative_deposit() throws NegativeDepositException{
+	public void when_negative_deposit() {
 		bankAccount.deposit(-800);
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
-	public void when_negative_withdraw() throws NegativeWithdrawException{
+	public void when_negative_withdraw() {
 		bankAccount.withdraw(-800);
 	}
 	
