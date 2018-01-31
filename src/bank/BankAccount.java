@@ -1,13 +1,14 @@
 package bank;
 
 import java.util.LinkedList;
+import java.util.List;
 
 import tools.Record;
 
 public class BankAccount {
 
 	private int amount;
-	private LinkedList<Record> records;
+	private List<Record> records;
 	
 	public BankAccount(int amount) {
 		if (amount < 0)
@@ -26,11 +27,11 @@ public class BankAccount {
 		this.amount = amount;
 	}
 
-	public LinkedList<Record> getRecords() {
+	public List<Record> getRecords() {
 		return records;
 	}
 
-	public void setRecords(LinkedList<Record> records) {
+	public void setRecords(List<Record> records) {
 		this.records = records;
 	}
 

@@ -15,7 +15,7 @@ public class Record {
 			throw new IllegalArgumentException("Bank Account can't be null");
 		if (amount < 0)
 			throw new IllegalArgumentException("Amount can't be negative");
-		if ((type != "Deposit") && (type != "Withdraw") && (type != "Creation"))
+		if (!(type.equals("Deposit")) && !(type.equals("Withdraw")) && !(type.equals("Creation")))
 			throw new IllegalArgumentException("Type can't be different from List: Deposit, Withdraw, Creation");
 		this.dateRecord = new Date();
 		this.target = target;
